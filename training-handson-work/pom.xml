@@ -13,7 +13,17 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
+    <properties>
+        <commons-validator.version>1.7</commons-validator.version>
+    </properties>
+
     <dependencies>
+        <!-- Credit Card Validation -->
+        <dependency>
+            <groupId>commons-validator</groupId>
+            <artifactId>commons-validator</artifactId>
+            <version>${commons-validator.version}</version>
+        </dependency>
 
         <!-- Database -->
         <!-- =============== -->
