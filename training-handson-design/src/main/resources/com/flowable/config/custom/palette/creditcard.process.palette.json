@@ -1,0 +1,75 @@
+{
+  "Palette-Id": "creditcard-process-palette",
+  "patchPalettes": [
+    "flowable-process-palette"
+  ],
+  "resourceBundles": [
+    "com/flowable/config/custom/palette/translation"
+  ],
+  "groups": {
+    "scooter": {
+      "index": 350
+    }
+  },
+  "stencils": [
+    {
+      "id": "ValidCreditCardNumber",
+      "superId": "ServiceTask",
+      "groups": [
+        "scooter"
+      ],
+      "icon": "../palette-icons?id=component-presentation/palette-icons/credit-card.png",
+      "bigIcon": "../palette-icons?id=component-presentation/palette-icons/credit-card.svg",
+      "properties": [
+        {
+          "id": "card-number",
+          "type": "SimpleTextExpression",
+          "index": 1,
+          "category": "edoras"
+        },
+        {
+          "id": "validation-result-variable-name",
+          "type": "SimpleText",
+          "index": 2,
+          "category": "edoras",
+          "variableExtractor": {
+            "type": "simple"
+          }
+        },
+        {
+          "id": "delegateexpression",
+          "value": "${creditCardValidation}",
+          "visible": false
+        },
+        {
+          "id": "expression",
+          "visible": false
+        },
+        {
+          "id": "classfields",
+          "visible": false
+        },
+        {
+          "id": "class",
+          "visible": false
+        },
+        {
+          "id": "servicetasktriggerable",
+          "visible": false
+        },
+        {
+          "id": "resultvariable",
+          "visible": false
+        },
+        {
+          "id": "includeinhistory",
+          "visible": false
+        },
+        {
+          "id": "servicetaskUseLocalScopeForResultVariable",
+          "visible": false
+        }
+      ]
+    }
+  ]
+}
