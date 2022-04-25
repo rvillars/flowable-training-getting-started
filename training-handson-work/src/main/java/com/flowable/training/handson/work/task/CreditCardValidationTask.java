@@ -13,11 +13,12 @@ public class CreditCardValidationTask extends AbstractPlatformTask {
     @Override
     public void executeTask(VariableContainer variableContainer, ExtensionElementsContainer extensionElementsContainer) {
         // Sample credit card number: 4111 1111 1111 1111
-        String cardNumber = (String) variableContainer.getVariable("cardNumber");
+        String cardNumber = getStringExtensionElementValue("card-number", extensionElementsContainer, variableContainer, null);
+        String resultVariableName = getStringExtensionElementValue("validation-result-variable-name", extensionElementsContainer, variableContainer, null);
         CreditCardValidator creditCardValidator = new CreditCardValidator();
         cardNumber = cardNumber.replaceAll("\\s*", "");
         boolean valid = creditCardValidator.isValid(cardNumber);
-        variableContainer.setVariable("cardValid", valid);
+        variableContainer.setVariable(resultVariableName, valid);
     }
 
 }
