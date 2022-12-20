@@ -1,0 +1,92 @@
+{
+  "name": "Java",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "VARIANT": "17",
+      "INSTALL_MAVEN": "true",
+      "INSTALL_GRADLE": "false",
+      "INSTALL_NODE": "false"
+    }
+  },
+
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "java.home": "/docker-java-home",
+    "maven.executable.path": "/usr/local/sdkman/candidates/maven/current/bin/mvn",
+
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorCustomizations": {
+      "debugConsole.infoForeground": "#ffffff"
+    },
+    "workbench.startupEditor": "none",
+    "security.workspace.trust.enabled": false,
+    "java.completion.filteredTypes": [
+      "java.awt.*",
+      "com.sun.*",
+      "sun.*",
+      "jdk.*",
+      "org.graalvm.*",
+      "io.micrometer.shaded.*",
+      "com.aspose.*",
+      "groovyjarjarantlr.*"
+    ],
+    "launch": {
+      "compounds": [
+        {
+          "name": "Flowable",
+          "configurations": ["Flowable Work", "Flowable Design"],
+          "stopAll": false
+        }
+      ],
+      "configurations": [
+        {
+          "type": "java",
+          "name": "Flowable Work",
+          "request": "launch",
+          "cwd": "${workspaceFolder}",
+          "console": "internalConsole",
+          "mainClass": "com.flowable.training.handson.work.TrainingHandsOnWorkApplication",
+          "projectName": "training-hands-on-work",
+          "args": "--spring.profiles.active=infraless --spring.output.ansi.enabled=always",
+          "envFile": "${workspaceFolder}/.env"
+        },
+        {
+          "type": "java",
+          "name": "Flowable Design",
+          "request": "launch",
+          "cwd": "${workspaceFolder}",
+          "console": "internalConsole",
+          "mainClass": "com.flowable.training.handson.design.TrainingHandsOnDesignApplication",
+          "projectName": "training-hands-on-design",
+          "args": "--spring.profiles.active=infraless --spring.output.ansi.enabled=always",
+          "envFile": "${workspaceFolder}/.env"
+        },
+        {
+          "type": "java",
+          "name": "Flowable Control",
+          "request": "launch",
+          "cwd": "${workspaceFolder}",
+          "console": "internalConsole",
+          "mainClass": "com.flowable.training.handson.control.TrainingHandsOnControlApplication",
+          "projectName": "training-hands-on-control",
+          "args": "--spring.profiles.active=infraless --spring.output.ansi.enabled=always",
+          "envFile": "${workspaceFolder}/.env"
+        }
+      ]
+    }
+  },
+
+  "extensions": [
+    "redhat.vscode-xml",
+    "pkief.material-icon-theme",
+    "pivotal.vscode-spring-boot",
+    "vscjava.vscode-java-pack"
+  ],
+
+  "forwardPorts": [ "8090", "8091", "8092"],
+
+  "postCreateCommand": "java -version",
+
+  "remoteUser": "vscode"
+}
