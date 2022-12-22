@@ -10,6 +10,12 @@
     }
   },
 
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "4gb",
+    "storage": "32gb"
+  },
+
   "settings": {
     "terminal.integrated.shell.linux": "/bin/bash",
     "maven.executable.path": "/usr/local/sdkman/candidates/maven/current/bin/mvn",
@@ -21,11 +27,7 @@
     "security.workspace.trust.enabled": false,
     "extensions.ignoreRecommendations" : true,
     "extensions.showRecommendationsOnlyOnDemand": true,
-    "java.compile.nullAnalysis.nullable": [
-      "javax.annotation.Nullable",
-      "org.eclipse.jdt.annotation.Nullable",
-      "org.springframework.lang.Nullable"
-    ],
+    "java.compile.nullAnalysis.mode": "disabled",
     "java.completion.filteredTypes": [
       "java.awt.*",
       "com.sun.*",
