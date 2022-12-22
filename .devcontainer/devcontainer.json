@@ -12,7 +12,6 @@
 
   "settings": {
     "terminal.integrated.shell.linux": "/bin/bash",
-    "java.home": "/docker-java-home",
     "maven.executable.path": "/usr/local/sdkman/candidates/maven/current/bin/mvn",
 
     "workbench.iconTheme": "material-icon-theme",
