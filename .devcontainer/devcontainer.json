@@ -13,7 +13,6 @@
   "settings": {
     "terminal.integrated.shell.linux": "/bin/bash",
     "maven.executable.path": "/usr/local/sdkman/candidates/maven/current/bin/mvn",
-
     "workbench.iconTheme": "material-icon-theme",
     "workbench.colorCustomizations": {
       "debugConsole.infoForeground": "#ffffff"
@@ -79,13 +78,13 @@
   "extensions": [
     "redhat.vscode-xml",
     "pkief.material-icon-theme",
-    "pivotal.vscode-spring-boot",
+    "pivotal.vscode-boot-dev-pack",
     "vscjava.vscode-java-pack"
   ],
 
   "forwardPorts": [ "8090", "8091", "8092"],
 
-  "postCreateCommand": "java -version",
+  "postCreateCommand": "mkdir ~/.m2 && echo $TRAINING_SETTINGS_XML > ~/.m2/settings.xml && mkdir ~/.flowable && echo $FLOWABLE_LICENSE > ~/.flowable/flowable.license",
 
   "remoteUser": "vscode"
 }
