@@ -39,6 +39,7 @@
       "groovyjarjarantlr.*"
     ],
     "java.server.launchMode": "Standard",
+    "boot-java.rewrite.reconcile": true,
     "launch": {
       "compounds": [
         {
