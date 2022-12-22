@@ -19,6 +19,13 @@
     },
     "workbench.startupEditor": "none",
     "security.workspace.trust.enabled": false,
+    "extensions.ignoreRecommendations" : true,
+    "extensions.showRecommendationsOnlyOnDemand": true,
+    "java.compile.nullAnalysis.nullable": [
+      "javax.annotation.Nullable",
+      "org.eclipse.jdt.annotation.Nullable",
+      "org.springframework.lang.Nullable"
+    ],
     "java.completion.filteredTypes": [
       "java.awt.*",
       "com.sun.*",
@@ -29,6 +36,7 @@
       "com.aspose.*",
       "groovyjarjarantlr.*"
     ],
+    "java.server.launchMode": "Standard",
     "launch": {
       "compounds": [
         {
@@ -84,7 +92,7 @@
 
   "forwardPorts": [ "8090", "8091", "8092"],
 
-  "postCreateCommand": "mkdir ~/.m2 && echo $TRAINING_SETTINGS_XML > ~/.m2/settings.xml && mkdir ~/.flowable && echo $FLOWABLE_LICENSE > ~/.flowable/flowable.license",
+  "postCreateCommand": "mkdir ~/.m2 && echo \"$TRAINING_SETTINGS_XML\" > ~/.m2/settings.xml && mkdir ~/.flowable && echo \"$FLOWABLE_LICENSE\" > ~/.flowable/flowable.license",
 
   "remoteUser": "vscode"
 }
